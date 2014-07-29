@@ -1,13 +1,18 @@
 $(document).ready(function() {
+    $('input, form').on('submit' ,function(event){
+        event.preventDefault();
+    } );
+
     $('input').keypress(function(event) {
-  		if (event.keycode == 13) {
-  			var toAdd = $('input[name=shoppingListItem]').val();
-    		$('#main').append('<div class="listItem">' + toAdd + '</div>');
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            $('#add').trigger('click');
+
  		}
 	});
     $('#add').click(function() {
     	var toAdd = $('input[name=shoppingListItem]').val();
-    	$('#main').append('<div class="listItem">' + toAdd + '</div>');
+    	$('#main').append('<div class="listItem">' + toAdd + '<div class="thex">x</div></div>');
     });
     $(document).on('dblclick', '.listItem', function() {
     	$(this).remove();
@@ -27,4 +32,7 @@ $(document).ready(function() {
     	$('#bottom').toggleClass('bounce');
     	$(this).toggleClass('bounce')
     });
+    $(document).on('click', '.thex', function() {
+        $(this).parent().remove();
+    });    
  });

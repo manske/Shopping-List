@@ -68,12 +68,22 @@ input:focus {
 	color: 	#008FB2;
 	padding: 20px;
 	overflow: hidden;
-	width: 300px;
 	display: inline-block;
+	height: 50px;
 }
 .listItem.bounce {
 	color: 	#8F0000;
 	text-decoration: line-through;
+
+}
+.thex {
+	display: inline-block;
+	font-size: 10px;
+	margin-left: 10px;
+	overflow: visible;
+}
+.thex:hover {
+	color: #8F0000;
 }
 #echo.bounce{
 	border-bottom: 1px solid black;
